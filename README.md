@@ -2,15 +2,13 @@
 
 ## What is testing?
 
-Testing in general is the process of executing your code to check it does what it's supposed to do. It demonstrates that your code meets the design requirements and can also provide a template for writing new code.
+Testing is the process of executing your code to check it does what it's supposed to do. It demonstrates that your code meets the design requirements and can also provide a template for writing new code.
 
-We're mostly concerned with automated unit testing for now, which involves writing code that will call your functions and tell you if they return what you expect. The idea is to test as many small "units" of code as you can, which will give you a good idea if the application as a whole is working.
+We're going to be working on **automated unit testing** this week: writing code that calls your functions and tells you if they return what you expect. The aim is to test as many small "units" of code as you can, which will give you a good idea if the application as a whole is working.
 
 It's very easy to create bugs in code, especially when you're editing an existing code base. A robust suite of automated tests gives you confidence to make changes, knowing that the tests will tell you if you introduce any bugs.
 
 ### Unit test example
-
-Here's a slightly contrived example:
 
 ```js
 function double(num) {
@@ -32,7 +30,7 @@ We can run `testDouble` to make sure that our `double` function is still returni
 
 ### Testing frameworks
 
-Testing like the example above won't get you very far, which is why we use frameworks to help us. We'll be using [Tape](https://github.com/substack/tape) on the course.
+Testing like the example above won't get us very far, which is why we use frameworks to help us. We'll be using [Tape](https://github.com/substack/tape) on the course.
 
 Frameworks give you "assertions" like `equal`, `deepEqual` and `ok` to check your values. They also let you easily describe what you're testing and what result was expected, which gives you good test outputs that can act as bug reports when something goes wrong.
 
@@ -48,7 +46,7 @@ Generally TDD follows the "red, green, refactor" cycle:
 
 ![](https://user-images.githubusercontent.com/9408641/27683709-e1c5e8c0-5cbe-11e7-99a4-215a5dae63f1.png)
 
-1. Write a failing test. This ensures you understand the requirements. Having the test fail also demonstrates that there are no false positives (so you know it's your code causing it to pass). E.g. "`double` should take a number `num` and return it doubled".
+1. Write a test that fails the test. Having the test fail demonstrates that there are no false positives (so you know it's your code causing it to pass). E.g. "`double` should take a number `num` and return it doubled".
 
 2. Make the test pass. This is where you actually write the code to do what you need. Make sure you don't cause any previous tests to fail.
 
@@ -60,7 +58,7 @@ It's much easier to test "pure" functions. These are functions that always retur
 
 Making your functions single-purpose will also help you test them. You can combine lots of small functions with their own tests to achieve bigger results.
 
-Think of tests as bug reports. What do you want a failing test to tell you?
+What do you want a failing test to tell you?
 
 1. What part of your code were you testing?
 2. What should that code do?
