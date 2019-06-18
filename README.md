@@ -34,6 +34,19 @@ Testing like the example above won't get us very far, which is why we use framew
 
 Frameworks give you "assertions" like `equal`, `deepEqual` and `ok` to check your values. They also let you easily describe what you're testing and what result was expected, which gives you good test outputs that can act as bug reports when something goes wrong.
 
+A good template for writing tests with Tape would look something like this:
+
+```js
+// Answer these questions for each unit test you write:
+test('What component aspect are you testing?', function(assert) {
+  const actual = 'What is the actual output?';
+  const expected = 'What is the expected output?';
+
+  assert.equal(actual, expected, 'What should the feature do?');
+  assert.end();
+});
+```
+
 ## What is Test-driven Development?
 
 TDD is a methodology for writing code where you write the tests _before_ your functions. This way you are forced to really think through exactly what you want your code to do (i.e. what values your function takes and returns) before you start writing it. It's like planning an essay (if your plan could also tell you if you've got the right answer).
@@ -57,26 +70,6 @@ Generally TDD follows the "red, green, refactor" cycle:
 It's much easier to test "pure" functions. These are functions that always return the same thing if given the same input. The `double` function above is pure because no matter what number it's given we know what it will return.
 
 Making your functions single-purpose will also help you test them. You can combine lots of small functions with their own tests to achieve bigger results.
-
-What do you want a failing test to tell you?
-
-1. What part of your code were you testing?
-2. What should that code do?
-3. What did it do?
-4. What should it have done?
-
-A good template for writing tests with Tape would look something like this:
-
-```js
-// Answer these questions for each unit test you write:
-test('What component aspect are you testing?', function(assert) {
-  const actual = 'What is the actual output?';
-  const expected = 'What is the expected output?';
-
-  assert.equal(actual, expected, 'What should the feature do?');
-  assert.end();
-});
-```
 
 ## Further reading
 
